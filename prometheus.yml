@@ -13,3 +13,7 @@ scrape_configs:
   - job_name: 'redis'
     static_configs:
       - targets: ['redis-exporter.model:9121', 'redis-exporter.model-test:9121']
+
+  - job_name: 'nginx'
+    static_configs:
+      - targets: ['nginx-vts-exporter.decaf-frontend:9913']
