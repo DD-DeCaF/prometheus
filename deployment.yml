@@ -39,6 +39,10 @@ spec:
         volumeMounts:
           - mountPath: "/var/lib/grafana"
             name: grafana
+      - name: blackbox-exporter
+        image: prom/blackbox-exporter
+        ports:
+        - containerPort: 9115
       volumes:
         - name: prometheus
           persistentVolumeClaim:
