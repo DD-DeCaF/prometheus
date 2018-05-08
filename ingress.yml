@@ -3,6 +3,10 @@ kind: Ingress
 metadata:
   name: prometheus
 spec:
+  tls:
+    - hosts:
+      - metrics.dd-decaf.eu
+      secretName: decaf-tls
   rules:
   - host: metrics.dd-decaf.eu
     http:
