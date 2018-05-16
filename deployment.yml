@@ -21,6 +21,12 @@ spec:
         imagePullPolicy: Always
         ports:
         - containerPort: 9090
+        resources:
+          requests:
+            cpu: "10m"
+            memory: "2Gi"
+          limits:
+            cpu: "500m"
         volumeMounts:
           - mountPath: "/prometheus"
             name: prometheus
@@ -36,6 +42,12 @@ spec:
             secretKeyRef:
               name: prometheus
               key: GF_SECURITY_ADMIN_PASSWORD
+        resources:
+          requests:
+            cpu: "10m"
+            memory: "256Mi"
+          limits:
+            cpu: "100m"
         volumeMounts:
           - mountPath: "/var/lib/grafana"
             name: grafana
@@ -43,6 +55,12 @@ spec:
         image: prom/blackbox-exporter
         ports:
         - containerPort: 9115
+        resources:
+          requests:
+            cpu: "10m"
+            memory: "128Mi"
+          limits:
+            cpu: "100m"
       volumes:
         - name: prometheus
           persistentVolumeClaim:
