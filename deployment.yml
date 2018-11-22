@@ -24,9 +24,8 @@ spec:
         resources:
           requests:
             cpu: "10m"
-            memory: "2Gi"
           limits:
-            cpu: "500m"
+            cpu: "1000m"
         volumeMounts:
           - mountPath: "/prometheus"
             name: prometheus
@@ -45,9 +44,8 @@ spec:
         resources:
           requests:
             cpu: "10m"
-            memory: "256Mi"
           limits:
-            cpu: "100m"
+            cpu: "1000m"
         volumeMounts:
           - mountPath: "/var/lib/grafana"
             name: grafana
@@ -58,9 +56,8 @@ spec:
         resources:
           requests:
             cpu: "10m"
-            memory: "128Mi"
           limits:
-            cpu: "100m"
+            cpu: "1000m"
       volumes:
         - name: prometheus
           persistentVolumeClaim:
