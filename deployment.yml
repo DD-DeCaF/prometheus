@@ -22,8 +22,6 @@ spec:
         ports:
         - containerPort: 9090
         resources:
-          requests:
-            cpu: "10m"
           limits:
             cpu: "1000m"
         volumeMounts:
@@ -42,8 +40,6 @@ spec:
               name: prometheus
               key: GF_SECURITY_ADMIN_PASSWORD
         resources:
-          requests:
-            cpu: "10m"
           limits:
             cpu: "1000m"
         volumeMounts:
@@ -54,8 +50,6 @@ spec:
         ports:
         - containerPort: 9115
         resources:
-          requests:
-            cpu: "10m"
           limits:
             cpu: "1000m"
       volumes:
